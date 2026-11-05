@@ -21,6 +21,20 @@
       "description": "Majors wait until Roy ticks them on the Dependency Dashboard",
       "matchUpdateTypes": ["major"],
       "dependencyDashboardApproval": true
+    },
+    {
+      "description": "stylelint and its configs peer on each other's major: move them in one branch",
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["stylelint", "stylelint-*", "@stylelint/**"],
+      "groupName": "stylelint major",
+      "groupSlug": "stylelint-major"
+    },
+    {
+      "description": "eslint and @eslint/js release majors together: move them in one branch",
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["eslint", "@eslint/**"],
+      "groupName": "eslint major",
+      "groupSlug": "eslint-major"
     }
   ]
 }
