@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Roy's shared Renovate rules: one grouped update a week, majors only on approval",
+  "extends": ["config:recommended"],
+  "schedule": ["* 0-8 * * 1"],
+  "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
+  "rangeStrategy": "bump",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* 0-8 * * 1"]
+  },
+  "packageRules": [
+    {
+      "description": "All minor and patch updates travel together, one branch per repo per week",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "non-major dependencies",
+      "groupSlug": "non-major"
+    },
+    {
+      "description": "Majors wait until Roy ticks them on the Dependency Dashboard",
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
+    }
+  ]
+}

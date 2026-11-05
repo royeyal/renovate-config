@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Opt-in: merge non-major and lock file updates straight into the default branch, no PR, once the branch's checks pass",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ],
+  "lockFileMaintenance": {
+    "automerge": true,
+    "automergeType": "branch"
+  }
+}
